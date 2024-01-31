@@ -1,0 +1,159 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<style>
+    .lik {
+        height: 55px;
+        line-height: 55px;
+        text-decoration: none;
+        margin-left: 15px;
+        font-family: bold;
+        font-size: 18px;
+        color:black;
+    }
+
+    .log {
+        display: flex;
+        height: 55px;
+        width: 250px;
+        background-repeat: no-repeat;
+        transform: translate(85px,9px)
+    }
+
+    #NavBar {
+        height: 45px;
+        width: 98%;
+        background-color: #06387d;
+        line-height: 45px;
+        font-family: bold;
+        font-size: 20px;
+        padding-left: 135px;
+    }
+
+    li {
+        display: inline-block;
+        list-style: none;
+        margin-left: 20px;
+    }
+
+    .pty:hover {
+        color: #fff;
+        background: #036d9a;
+        border: none;
+        height: 45px;
+        line-height: 45px;
+        padding-top: 0px;
+        width: 9%;
+        text-align: center;
+    }
+
+    .ryt:hover {
+        color: #fff;
+        background: #036d9a;
+        border: none;
+        height: 45px;
+        line-height: 45px;
+        width: 11%;
+        padding-top: 1px;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding-bottom: 1px;
+    }
+</style>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddCategor</title>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/JavaScrip/AddCategory.js?v=1.3"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="log">
+            </div>
+        </div>
+        <div class="col-sm-6" style="padding-left:200px;">
+            <a class="lik" href="/Master/chagePssword">ChangePassword</a>
+                    <a class="lik" href="/Master/LoginPage">    <i class="fa fa-sign-out" aria-hidden="true"    style="color:red"></i>   LogOut</a>             
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid" id="NavBar">
+                <a class="navbar-brand pty" href="/Master/Deshboard" style="color:white">Dashboard</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ryt">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/Master/Deshboard" data-bs-toggle="dropdown" style="color:white">
+                                Product
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/Master/AddCategor">Add Category</a></li>
+                                <li><a class="dropdown-item" href="/Master/AddSubCategory">Add Sub Category</a></li>
+                                <li><a class="dropdown-item" href="/Master/AddProduct">Add Product</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 style="color: #036d9a;">Add Category</h3>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label>Category-Name</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="txtCategoryName" />
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspActive</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="checkbox" id="txtchecked" />
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-sm-3">
+                                </div>
+                                <div class="col-sm-5">
+                                    <button class="btn btn-primary" id="btnsave" style="margin-left:198px;">Submit@*<i class="fa fa-sign-in">*@</i></button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+        <div class="row mt-5">
+            <div id="Grid" style="overflow:auto;"></div>
+        </div>
+
+</body>
+</html>
