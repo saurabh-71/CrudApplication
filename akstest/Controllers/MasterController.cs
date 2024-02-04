@@ -143,22 +143,23 @@ namespace AKS_Machin_Test.Controllers
                 DataTable dt = DBManager.ExecuteProcess("USP_ShowAddProductcategory");
                 if (dt.Rows.Count > 0)
                 {
-                    sb.Append("<table class='table table-responsibe'><tr style='background:#484747;color:white;'>");
-                    sb.Append("<th>Sr. No.</th>");
-                    sb.Append("<th>Category Name</th>");
-                    sb.Append("<th>Status</th>");
-                    sb.Append("<th>Delete</th>");
-                    sb.Append("<th>Edit</th></tr>");
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        sb.Append("<tr><td>" + dt.Rows[i]["AddCategory Id"].ToString() + "</td>");
-                        sb.Append("<td>" + dt.Rows[i]["CategoryName"].ToString() + "</td>");
-                        sb.Append("<td>" + dt.Rows[i]["IsActive"].ToString() + "</td>");
-                        sb.Append("<td><button type='button' class='btn btn-danger' onclick='Delete(" + dt.Rows[i]["AddCategoryId"].ToString() + ")'><i class='fa fa-trash'aria-hidden='true'></i></td>");
-                        sb.Append("<td><button type='button' class='btn btn-success' onclick='Edit(" + dt.Rows[i]["AddCategoryId"].ToString() + ")'><i class='fa fa-edit'></i></td></tr>");
-                    }
-                    sb.Append("</table>");
-                    dic["Grid"] = sb.ToString();
+                    //sb.Append("<table class='table table-responsibe'><tr style='background:#484747;color:white;'>");
+                    //sb.Append("<th>Sr. No.</th>");
+                    //sb.Append("<th>Category Name</th>");
+                    //sb.Append("<th>Status</th>");
+                    //sb.Append("<th>Delete</th>");
+                    //sb.Append("<th>Edit</th></tr>");
+                    //for (int i = 0; i < dt.Rows.Count; i++)
+                    //{
+                    //    sb.Append("<tr><td>" + dt.Rows[i]["AddCategory Id"].ToString() + "</td>");
+                    //    sb.Append("<td>" + dt.Rows[i]["CategoryName"].ToString() + "</td>");
+                    //    sb.Append("<td>" + dt.Rows[i]["IsActive"].ToString() + "</td>");
+                    //    sb.Append("<td><button type='button' class='btn btn-danger' onclick='Delete(" + dt.Rows[i]["AddCategoryId"].ToString() + ")'><i class='fa fa-trash'aria-hidden='true'></i></td>");
+                    //    sb.Append("<td><button type='button' class='btn btn-success' onclick='Edit(" + dt.Rows[i]["AddCategoryId"].ToString() + ")'><i class='fa fa-edit'></i></td></tr>");
+                    //}
+                    //sb.Append("</table>");
+                    StringBuilder b= DBManager.GridView(dt, "AddCategoryId", "AddCategoryId", true,true);
+                    dic["Grid"] = b.ToString();
                 }
             }
             catch (Exception ex)
