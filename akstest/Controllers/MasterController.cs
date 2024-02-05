@@ -715,6 +715,15 @@ namespace AKS_Machin_Test.Controllers
             }
             return Json(dic);
         }
+        public ActionResult Export()
+        {
+            DataTable dt = DBManager.ExecuteProcess("USP_ShowAddProduct");
+            if (dt.Rows.Count > 0)
+            {
+                
+            }
+            return RedirectToAction("AddProduct");
+        }
 
         #endregion  AddProduct
 

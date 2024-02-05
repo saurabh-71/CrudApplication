@@ -137,99 +137,73 @@
             <div class="card">
                 <div class="card-header">
                     <h3 style="color: #036d9a;">Add-Product</h3>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <label>Select Category Name</label>
-                            </div>
-                            <div class="col-sm-6">
-                                <select class="form-control" id="ddlCategoryName">
-                                    <option> --select Category--</option>
-                                </select>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <label>Select SubCategory Name</label>
-                            </div>
-                            <div class="col-sm-6">
-                                <select class="form-control" multiple id="ddlSubCategoryName">
-                                    <option> --select SubCategory--</option>
-                                </select>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <label> Product Name</label>
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" id="txtProductName" />
-                            </div>
-                        </div>
-                        <br />
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <label> Product Image</label>
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="file" class="form-control" id="txtProductImage" />
-                                <img id="imgShow" style="height: 80px; width: 80px; margin-top: 10px;" alt="image path wrong.."
-                                     class="mt-2 " />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <input type="hidden" class="form-control" id="txthidden" />
-
-                            </div>
-                        </div>
-                        <br />
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <label> Short Description</label>
-                            </div>
-                            <div class="col-sm-6">
-                                <textarea class="form-control" id="txtShortDescription"></textarea>
-                            </div>
-                        </div>
-                        <br />
-                        @*<div class="row ">
-                            <h3 style="border-bottom: 1px solid   gray; padding-bottom: 10px; margin: 20px 0 20px 15px;">
-                                Description
-                            </h3> <br />
-                            <div class="wrap">
-                                <div id="wrapper">
-                                    <div class="row" data-count="1">
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control d-none" value="0" id="1id1" placeholder="Title" />
-                                            <input type="text" class="form-control" id="txttitle1" placeholder="Title" />
-                                            <div class="row" data-subcount="1">
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control" id="txtHeading1" placeholder="Heading" />
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control" id="txtDescription1" placeholder="Description" />
-                                                </div>
-                                            </div>
-                                            <a class="remove text-decoration-none btn btn-danger" style="cursor:pointer;" onclick="removeRow(this)">Remove</a>
-                                        </div>
-                                    </div>
+                    <form method="post" action="/Master/Export">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <label>Select Category Name</label>
                                 </div>
-                                <button id="add" class="btn btn-secondary" onclick="addMore()">Add More</button>
+                                <div class="col-sm-6">
+                                    <select class="form-control" id="ddlCategoryName">
+                                        <option> --select Category--</option>
+                                    </select>
+                                </div>
                             </div>
                             <br />
-                        </div>*@
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-sm-10">
-                                <h3 style="border-bottom: 1px solid gray; padding-bottom: 10px; margin: 20px 0 20px 15px;">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <label>Select SubCategory Name</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <select class="form-control" multiple id="ddlSubCategoryName">
+                                        <option> --select SubCategory--</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <label> Product Name</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="txtProductName" />
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <label> Product Image</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="file" class="form-control" id="txtProductImage" />
+                                    <img id="imgShow" style="height: 80px; width: 80px; margin-top: 10px;" alt="image path wrong.."
+                                         class="mt-2 " />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="hidden" class="form-control" id="txthidden" />
+
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <label> Short Description</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <textarea class="form-control" id="txtShortDescription"></textarea>
+                                </div>
+                            </div>
+                            <br />
+                            @*<div class="row ">
+                                <h3 style="border-bottom: 1px solid   gray; padding-bottom: 10px; margin: 20px 0 20px 15px;">
                                     Description
-                                </h3>
+                                </h3> <br />
                                 <div class="wrap">
                                     <div id="wrapper">
                                         <div class="row" data-count="1">
-                                            <div class="col-sm-12">
+                                            <div class="col-sm-6">
                                                 <input type="text" class="form-control d-none" value="0" id="1id1" placeholder="Title" />
                                                 <input type="text" class="form-control" id="txttitle1" placeholder="Title" />
                                                 <div class="row" data-subcount="1">
@@ -247,71 +221,100 @@
                                     <button id="add" class="btn btn-secondary" onclick="addMore()">Add More</button>
                                 </div>
                                 <br />
-                            </div>
-                        </div>
-
-                        <br />
-                        <div class="row ">
-                            <h5 style="border-bottom: 1px solid   gray; padding-bottom: 10px; margin: 20px 0 20px 15px;">
-                                Feature
-                            </h5> <br />
-                            <div class="row">
-                                <div class="col-sm-5">
-                                    <label>Content</label>
-                                </div>
-                                <div class="col-sm-12">
-                                    <textarea id="txtContent" name="txtContent" class="txtContent"></textarea>
-                                    <script>
-                                        CKEDITOR.replace('txtContent');
-                                    </script>
+                            </div>*@
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-10">
+                                    <h3 style="border-bottom: 1px solid gray; padding-bottom: 10px; margin: 20px 0 20px 15px;">
+                                        Description
+                                    </h3>
+                                    <div class="wrap">
+                                        <div id="wrapper">
+                                            <div class="row" data-count="1">
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control d-none" value="0" id="1id1" placeholder="Title" />
+                                                    <input type="text" class="form-control" id="txttitle1" placeholder="Title" />
+                                                    <div class="row" data-subcount="1">
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="txtHeading1" placeholder="Heading" />
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="txtDescription1" placeholder="Description" />
+                                                        </div>
+                                                    </div>
+                                                    <a class="remove text-decoration-none btn btn-danger" style="cursor:pointer;" onclick="removeRow(this)">Remove</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button id="add" class="btn btn-secondary" onclick="addMore()">Add More</button>
+                                    </div>
                                     <br />
                                 </div>
                             </div>
-                        </div>
-                        <div class="row ">
-                            <h3 style="border-bottom: 1px solid   gray; padding-bottom: 10px; margin: 20px 0 20px 15px;">
-                                Pdf Upload
-                            </h3> <br />
-                            <div id="dynamic_field">
-                                <div class="row" data-count="1">
-                                    <div class="col-sm-10">
-                                        <div class="row">
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control d-none" id="txtPdfId1" value="0" placeholder="PdfHeading" />
-                                                <input type="text" class="form-control" id="txtPdfHeading1" placeholder="PdfHeading" />
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <input type="file" class="form-control" onchange="base64Image1(this)" id="filePdfHeading1" />
-                                            </div>
-                                            <div class="col-sm-2">
-                                                <img id="imgPdfHeading1" class="img-thumbnail" alt="Image Preview" style="max-width: 100px; max-height: 100px;display:none;">
-                                            </div>
-                                        </div>
-                                        <a class="remove btn btn-danger" onclick="removeFieldElement(this)">Remove</a>
+
+                            <br />
+                            <div class="row ">
+                                <h5 style="border-bottom: 1px solid   gray; padding-bottom: 10px; margin: 20px 0 20px 15px;">
+                                    Feature
+                                </h5> <br />
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <label>Content</label>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <textarea id="txtContent" name="txtContent" class="txtContent"></textarea>
+                                        <script>
+                                            CKEDITOR.replace('txtContent');
+                                        </script>
+                                        <br />
                                     </div>
                                 </div>
                             </div>
-                            <button id="add_field" class="btn btn-secondary w-25" onclick="addFieldElement()">Add More</button>
-                        </div> <br />
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <label> Active</label>
+                            <div class="row ">
+                                <h3 style="border-bottom: 1px solid   gray; padding-bottom: 10px; margin: 20px 0 20px 15px;">
+                                    Pdf Upload
+                                </h3> <br />
+                                <div id="dynamic_field">
+                                    <div class="row" data-count="1">
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <input type="text" class="form-control d-none" id="txtPdfId1" value="0" placeholder="PdfHeading" />
+                                                    <input type="text" class="form-control" id="txtPdfHeading1" placeholder="PdfHeading" />
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input type="file" class="form-control" onchange="base64Image1(this)" id="filePdfHeading1" />
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <img id="imgPdfHeading1" class="img-thumbnail" alt="Image Preview" style="max-width: 100px; max-height: 100px;display:none;">
+                                                </div>
+                                            </div>
+                                            <a class="remove btn btn-danger" onclick="removeFieldElement(this)">Remove</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button id="add_field" class="btn btn-secondary w-25" onclick="addFieldElement()">Add More</button>
+                            </div> <br />
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <label> Active</label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input type="checkbox" id="txtchecked" />
+                                </div>
                             </div>
-                            <div class="col-sm-5">
-                                <input type="checkbox" id="txtchecked" />
+                            <br />
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <button class="btn btn-primary" id="btnsave" type="button">
+                                        Submit
+                                    </button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="submit" value="Export" class="btn btn-success" />
+                                </div>
                             </div>
                         </div>
-                        <br />
-                        <div class="row">
-                            <div class="col-sm-3">
-                            </div>
-                            <div class="col-sm-5">
-                                <button class="btn btn-primary" id="btnsave" style="margin-left:198px;" tabindex="1">
-                                    Submit
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
 
                 </div>
             </div>

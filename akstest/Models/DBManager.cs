@@ -6,6 +6,9 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 using System.Text;
+using System.IO;
+using System.Web.Mvc;
+using ClosedXML.Excel;
 
 namespace AKS_Machin_Test.Models
 {
@@ -36,6 +39,7 @@ namespace AKS_Machin_Test.Models
             adapter.Fill(dt);
             return dt;
         }
+
         public static StringBuilder GridView(DataTable table,string id, string RemoveColumn = "", bool Edit=true,bool Delete=true)
         {
             StringBuilder st = new StringBuilder();
@@ -86,5 +90,17 @@ namespace AKS_Machin_Test.Models
             st.Append("</table>");
             return st;
         }
+
+        public static string SelectSingleValue(string TableName,string ColumnName,string Condition)
+        {
+            SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings.Get("DBConnection"));
+            string query ="Select "+ColumnName+" From "+TableName+" Where 1=1 and "+Condition; 
+            SqlCommand cmd=new SqlCommand(query,connection);
+            connection.Open();
+            string SingleValue = (string)cmd.ExecuteScalar();
+            connection.Close();
+            return SingleValue; 
+        }
+    
     }
 }
