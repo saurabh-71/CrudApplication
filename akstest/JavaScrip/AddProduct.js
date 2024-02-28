@@ -319,10 +319,11 @@ function addFieldElement() {
         '<input type="text" class="form-control" id="txtPdfHeading' + count + '" placeholder="PdfHeading" />' +
         '</div>' +
         '<div class="col-sm-5">' +
-        '<input type="file" class="form-control" onchange="base64Image1(this)" id="filePdfHeading' + count + '" />' +
+        '<input type="file" accept="application/pdf" class="form-control" onchange="base64Image1(this)" id="filePdfHeading' + count + '" />' +
         '</div>' +
         '<div class="col-sm-2">' +
-        '<img id="imgPdfHeading' + count +'" class="img-thumbnail" alt="Image Preview" style="max-width: 100px; max-height: 100px;display:none;">' +
+        //'<img id="imgPdfHeading' + count +'" class="img-thumbnail" alt="Image Preview" style="max-width: 100px; max-height: 100px;display:none;">' +
+        '<iframe src="" id="imgPdfHeading' + count +'" style="max-width: 100px; max-height: 100px;display:none;"> </iframe> ' +
         '</div>' +
         '</div>' +
         '<a class="remove btn btn-danger" onclick="removeFieldElement(this)">Remove</a>' +
@@ -404,7 +405,7 @@ function addPdfRows(data) {
         newRow.find('.form-control#txtPdfId1').attr('id', 'txtPdfId' + mainCount).val(imageid[i + 1]);
         newRow.find('.form-control#txtPdfHeading1').attr('id', 'txtPdfHeading' + mainCount).val(fileheading[i + 1]);
         newRow.find('.form-control#filePdfHeading1').attr('id', 'filePdfHeading' + mainCount).val("");
-        newRow.find('.img-thumbnail#imgPdfHeading1').attr('id', 'imgPdfHeading' + mainCount).attr('src', image[i + 1]).css("display", "block");
+        newRow.find('#imgPdfHeading1').attr('id', 'imgPdfHeading' + mainCount).attr('src', image[i + 1]).css("display", "block");
 
         newRow.find('.remove').attr('onclick', 'removeFieldElement(this)');
         $('#dynamic_field').append(newRow);

@@ -137,7 +137,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3 style="color: #036d9a;">Add-Product</h3>
-                    <form method="post" action="/Master/Export">
+                    
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-5">
@@ -282,10 +282,11 @@
                                                     <input type="text" class="form-control" id="txtPdfHeading1" placeholder="PdfHeading" />
                                                 </div>
                                                 <div class="col-sm-5">
-                                                    <input type="file" class="form-control" onchange="base64Image1(this)" id="filePdfHeading1" />
+                                                    <input type="file" accept="application/pdf" class="form-control" onchange="base64Image1(this)" id="filePdfHeading1" />
                                                 </div>
                                                 <div class="col-sm-2">
-                                                    <img id="imgPdfHeading1" class="img-thumbnail" alt="Image Preview" style="max-width: 100px; max-height: 100px;display:none;">
+                                                    @*<img id="imgPdfHeading1" class="img-thumbnail" alt="Image Preview" style="max-width: 100px; max-height: 100px;display:none;">*@
+                                                    <iframe src="" id="imgPdfHeading1" style="max-width: 100px; max-height: 100px;display:none;"> </iframe>
                                                 </div>
                                             </div>
                                             <a class="remove btn btn-danger" onclick="removeFieldElement(this)">Remove</a>
@@ -314,7 +315,6 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
 
                 </div>
             </div>
